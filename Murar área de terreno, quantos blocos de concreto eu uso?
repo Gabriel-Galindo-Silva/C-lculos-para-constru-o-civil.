@@ -1,0 +1,61 @@
+package calcbloc;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Usuário Gabriel Galindo.
+ * Calcular quantos blocos irei utilizar em uma construção.
+ */
+public class CalcBloc {
+
+    
+    public static void main(String[] args) {
+     
+        int lD = 0, lE = 0,frent = 0, fund = 0, bas = 0, alt = 0, i = 0, calc1 = 0, calc2 = 0, calc3 = 0, calc4 = 0, m2 = (int) 12.5, total = 0; 
+        
+        String fim = " ";
+                    JOptionPane.showMessageDialog(null,"|_-_-_Vamos ver quantos bloco irei utilizar na construção?_-_-_| ");
+                
+        
+            while (!fim.equals("Fim")){
+                if (i == lD){
+                    bas = Integer.parseInt(JOptionPane.showInputDialog(" Medidas da parede latera direita.\n Informe o valor da base: "));
+                    alt = Integer.parseInt(JOptionPane.showInputDialog(" Informe o valor da altura: "));
+                    lD = bas * alt;
+                    calc1 = lD * m2;
+                }
+                if (i == lE){
+                    bas = Integer.parseInt(JOptionPane.showInputDialog(" Medidas da parede lateral esquerda.\n Informe o valor da base: "));
+                    alt = Integer.parseInt(JOptionPane.showInputDialog(" Informe o valor da altura: "));
+                    lE = bas * alt;
+                    calc2 = lE * m2;
+                }
+                if (i == frent){
+                    bas = Integer.parseInt(JOptionPane.showInputDialog(" Medidas da parede da frente.\n Informe o valor da base: "));
+                    alt = Integer.parseInt(JOptionPane.showInputDialog(" Informe o valor da altura: "));
+                    frent = bas * alt;
+                    calc3 = frent * m2;
+                }
+                if (i == fund){
+                    bas = Integer.parseInt(JOptionPane.showInputDialog(" Medidas da parede do fundo.\n Informe o valor da base: "));
+                    alt = Integer.parseInt(JOptionPane.showInputDialog(" Informe o valor da altura: "));
+                    fund = bas * alt;
+                    calc4 = fund * m2;
+                }
+                total = calc1 + calc2 + calc3 + calc4;
+                i++;
+                fim = JOptionPane.showInputDialog(" Se deseja para os cálculos digite [Fim]");
+            }
+                JOptionPane.showMessageDialog(null,"__-__-Segue o resultado-__-__");
+                JOptionPane.showMessageDialog(null," Conforme o tamanho do terreno que irei construir.\n"
+                        + " Tenho na direita do terreno uma parede de "+lD+"m² e precisarei de "+calc1+ " blocos.\n"
+                        + " Tenho na esquerda do terreno uma parede de "+lE+"m² e precisarei de "+calc2+ " blocos.\n"
+                        + " Tenho na frente do terreno uma parede de "+frent+ "m² e precisarei de "+calc3+" blocos.\n"
+                        + " Tenho no fundo do terreno uma parede de "+fund+ "m² e precisarei de "+calc4+ " blocos.\n"
+                                + " Total de blocos precisarei na construção toda é de "+total+ " blocos.");
+                        
+                JOptionPane.showMessageDialog(null,"|---___Fim dos calculos___---|");
+    }
+    
+}
